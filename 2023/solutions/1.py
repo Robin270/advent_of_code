@@ -1,0 +1,26 @@
+import aoc_utils, regex
+from pathlib import Path
+
+# Init
+data = aoc_utils.import_rows(Path(__file__).stem)
+word_numbers = {"one": "1", "two": "2", "three": "3", "four": "4", "five": "5", "six": "6", "seven": "7", "eight": "8", "nine": "9"}
+
+# Part 1 & Part 2
+part_1 = 0
+part_2 = 0
+
+for row in data:
+    digits = ""
+    for i in row:
+        if i.isnumeric(): digits += i
+    if digits: part_1 += int(digits[0] + digits[-1])
+    digits = ""
+    matches = [i for i in regex.finditer("|".join(list(word_numbers.keys())), row, overlapped=True)]
+    for i, j in enumerate(row):
+        if j.isnumeric(): digits += j; continue
+        for m in matches:
+            if m.span()[0] == i: digits += word_numbers[m.group()]
+    part_2 += int(digits[0] + digits[-1])
+
+# Results
+aoc_utils.print_results(part_1, part_2)
