@@ -1,9 +1,10 @@
 import aoc_utils
 from math import prod
+from typing import Final
 
 # Init
 data = aoc_utils.import_rows()
-max_colors = {"red": 12, "green": 13, "blue": 14}
+MAX_COLORS: Final[dict[str, int]] = {"red": 12, "green": 13, "blue": 14}
 
 # Part 1 & Part 2
 part_1 = 0
@@ -26,7 +27,7 @@ for row in data:
             local_colors[b[1]] = int(b[0])
         for x in local_colors:
             globals_colors[x] = local_colors[x] if local_colors[x] > globals_colors[x] else globals_colors[x]
-            if local_colors[x] > max_colors[x]: possible = False
+            if local_colors[x] > MAX_COLORS[x]: possible = False
     part_2 += prod(globals_colors.values())
     if possible: part_1 += row[0]
 

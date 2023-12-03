@@ -1,9 +1,9 @@
 import aoc_utils, regex
-from typing import Final, Any
+from typing import Final
 
 # Init
-data: list[list[Any]] = aoc_utils.import_rows()
-WORD_NUMBERS: Final[dict] = {"one": "1", "two": "2", "three": "3", "four": "4", "five": "5", "six": "6", "seven": "7", "eight": "8", "nine": "9"}
+data = aoc_utils.import_rows()
+WORD_NUMBERS: Final[dict[str, str]] = {"one": "1", "two": "2", "three": "3", "four": "4", "five": "5", "six": "6", "seven": "7", "eight": "8", "nine": "9"}
 
 # Part 1 & Part 2
 part_1 = 0
