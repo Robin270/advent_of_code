@@ -2,7 +2,7 @@
 ![Advent of Code in Python](https://blog.pythondiscord.com/content/images/2021/03/AoC_banner.png "Advent of Code in Python")
 My **Python** solutions to the **[Advent of Code event](https://adventofcode.com/)**.
 
-All of them were done **purely on my own**. This means I haven't searched for solutions or any other help connected directly to the task. This basically means I didn't cheat – if there is ever something missing, then it means I didn't successfully solve it. But of course I was using Google a lot for those basic things I know about but never seem to be able to remember the syntax or whatever – but we're all like this, right? :sweat-smile:
+All of them were done **purely on my own**. This means I haven't searched for solutions or any other help connected directly to the task. This basically means I didn't cheat – if there is ever something missing, then it means I didn't successfully solve it. But of course I was using Google a lot for those basic things I know about but never seem to be able to remember the syntax or whatever – but we're all like this, right? :sweat_smile:
 
 And very important to mention is that this is why these solutions are not always the cleanest, most straight-forward, fastest or most efficient ones. But they're 100% working and that is what matters. At least for me, since I really enjoy it as a part of the endless process of self-improvement.
 
