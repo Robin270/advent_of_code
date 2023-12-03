@@ -1,9 +1,8 @@
 import aoc_utils
-from pathlib import Path
 from math import prod
 
 # Init
-data = aoc_utils.import_rows(Path(__file__).stem)
+data = aoc_utils.import_rows()
 max_colors = {"red": 12, "green": 13, "blue": 14}
 
 # Part 1 & Part 2
