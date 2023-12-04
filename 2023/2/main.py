@@ -7,8 +7,7 @@ data = aoc_utils.import_rows()
 MAX_COLORS: Final[dict[str, int]] = {"red": 12, "green": 13, "blue": 14}
 
 # Part 1 & Part 2
-part_1 = 0
-part_2 = 0
+part_1, part_2 = 0, 0
 
 for row in data:
     row = row.split(": ")

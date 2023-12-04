@@ -5,8 +5,7 @@ from math import prod
 data = aoc_utils.import_rows()
 
 # Part 1 & Part 2
-part_1 = 0
-part_2 = 0
+part_1, part_2 = 0, 0
 
 visited = []
 for y, row in enumerate(data):

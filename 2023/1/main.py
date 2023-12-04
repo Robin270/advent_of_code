@@ -6,8 +6,7 @@ data = aoc_utils.import_rows()
 WORD_NUMBERS: Final[dict[str, str]] = {"one": "1", "two": "2", "three": "3", "four": "4", "five": "5", "six": "6", "seven": "7", "eight": "8", "nine": "9"}
 
 # Part 1 & Part 2
-part_1 = 0
-part_2 = 0
+part_1, part_2 = 0, 0
 
 for row in data:
     digits = ""
