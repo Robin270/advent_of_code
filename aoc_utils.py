@@ -1,16 +1,19 @@
+import itertools
 """Custom module with utilities. Consists of functions to handle frequently needed subtasks when dealing with AOC"""
 
 # General purpose
-def import_rows() -> list[str]:
+def import_rows(sep: str = "\n") -> list[str]:
     """
     Loads the puzzle input in line-by-line list format from ./input.in file.
 
+    :param sep: Separator to use when splitting the data. Default is \\n
+    :type sep: str
     :return: List of strings where each element is exactly one line of the source file
     :rtype: list[str]
     """
 
     with open("./input.in", "r") as input_data:
-        return input_data.read().split("\n")
+        return input_data.read().split(sep)
 
 def print_results(first: str | int | None, second: str | int | None) -> None:
     """
