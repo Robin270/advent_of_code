@@ -1,4 +1,3 @@
-import itertools
 """Custom module with utilities. Consists of functions to handle frequently needed subtasks when dealing with AOC"""
 
 # General purpose

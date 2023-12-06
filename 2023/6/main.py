@@ -9,10 +9,8 @@ for i in range(0, len(times)): records[int(times[i])] = int(distances[i])
 
 # Part 1
 part_1 = 1
-def race(duration: int, results: dict) -> int:
-    options = 0
-    for hold in range(1, duration):
-        if hold*(duration-hold) > results[duration]: options += 1
+def race(duration: int, results: dict, options: int = 0) -> int:
+    for hold in range(1, duration): options = options+1 if hold*(duration-hold) > results[duration] else options
     return options
 for i in records.keys(): part_1 *= race(i, records)
 
