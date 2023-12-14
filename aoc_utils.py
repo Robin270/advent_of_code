@@ -1,4 +1,5 @@
-"""Custom module with utilities. Consists of functions to handle frequently needed subtasks when dealing with AOC"""
+from typing import Literal
+"""Custom module with utilities. Consists of functions to handle frequently needed subtasks when dealing with AoC"""
 
 # General purpose
 def import_rows(sep: str = "\n") -> list[str]:
@@ -11,8 +12,7 @@ def import_rows(sep: str = "\n") -> list[str]:
     :rtype: list[str]
     """
 
-    with open("./input.in", "r") as input_data:
-        return input_data.read().split(sep)
+    with open("./input.in", "r") as input_data: return input_data.read().split(sep)
 
 def print_results(first: str | int | None, second: str | int | None) -> None:
     """
@@ -56,3 +56,28 @@ def get_neighbours(x: int, y: int, field: list, corners: bool = False, as_tuple:
             for k in j:
                 if k[1] >= 0 and k[1] < len(field) and k[0] >= 0 and k[0] < len(field[k[1]]): neighbours.append(k)
     return tuple(neighbours) if as_tuple else neighbours
+
+def get_neighbour_direction(base: tuple[int, int], neighbour: tuple[int, int]) -> Literal["N", "NE", "E", "SE", "S",
+"SW", "W", "NW"] | None:
+    """
+        Starting at a specific point, it returns which direction within a 2D field do you have to move to reach a
+        specific neighbour (supports diagonal movement)
+
+        :param base: x, y coordinates of the base point
+        :type base: tuple[int, int]
+        :param neighbour: x, y coordinates of the neighbour
+        :type neighbour: tuple[int, int]
+        :return: Direction from the base to the neighbour or None when not neighbouring each other
+        :rtype: Literal["N", "NE", "E", "SE", "S", "SW", "W", "NW"] | None
+    """
+
+    match (base[0]-neighbour[0], base[1]-neighbour[1]):
+        case (1, 0): return "W"
+        case (-1, 0): return "E"
+        case (0, 1): return "N"
+        case (0, -1): return "S"
+        case (1, 1): return "NW"
+        case (1, -1): return "SW"
+        case (-1, 1): return "NE"
+        case (-1, -1): return "SE"
+        case _: return None
